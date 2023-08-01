@@ -42,25 +42,25 @@ function App() {
   const dischargeBot = (id) => {
     setYourBotArmy((prevArmy) => prevArmy.filter((bot) => bot.id !== id));
     setBotCollection((prevCollection) => prevCollection.filter((bot) => bot.id !== id));
-  };    
+  };
 
   return (
     <div className="App">
       <h1>Galactic Bot Army</h1>
-      <BotCollection
-        bots={botCollection}
-        onEnlist={enlistBot}
-        onRelease={releaseBot}
-        onDischarge={dischargeBot}
-      />
-      <YourBotArmy
-        armyBots={yourBotArmy}
-        onRelease={releaseBot}
-        onDischarge={dischargeBot}
-      />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h2>Main Collection</h2>
+            <BotCollection bots={botCollection} onEnlist={enlistBot} />
+          </div>
+          <div className="col">
+            <h2>Your Bot Army</h2>
+            <YourBotArmy armyBots={yourBotArmy} onRelease={releaseBot} onDischarge={dischargeBot} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
-

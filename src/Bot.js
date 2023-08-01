@@ -4,7 +4,7 @@ const Bot = ({ bot, onEnlist, onRelease, onDischarge }) => {
   const { id, name, type, inArmy } = bot;
 
   return (
-    <div className="bot-card">
+    <div className="bot-card" style={{width: '100px'}}>
       <h3>{name}</h3>
       <p>Type: {type}</p>
       {inArmy ? (
